@@ -4,31 +4,31 @@ var Being = require('../src/being');
 var Part = require('../src/part');
 
 describe('Ship', function() {
-  it.skip('should have a name', function() {
+  it('should have a name', function() {
     var shuttle = new Ship({name: 'Wanderer'});
 
     assert.equal(shuttle.name, 'Wanderer');
   })
 
-  it.skip('can have a different name', function() {
+  it('can have a different name', function() {
     var shuttle = new Ship({name: 'Atlantis'});
 
     assert.equal(shuttle.name, 'Atlantis');
   })
 
-  it.skip('can be given a type', function() {
+  it('can be given a type', function() {
     var shuttle = new Ship({name: 'Atlantis', type: 'passenger'});
 
     assert.equal(shuttle.type, 'passenger');
   })
 
-  it.skip('can be given a different type', function() {
+  it('can be given a different type', function() {
     var shuttle = new Ship({name: 'Atlantis', type: 'cargo'});
 
     assert.equal(shuttle.type, 'cargo');
   })
 
-  it.skip('may not have an invalid designation', function() {
+  it('may not have an invalid designation', function() {
     var fighter = new Ship({name: 'Atlantis', type: 'military'});
     var invalid1 = new Ship({name: 'Toy', type: 'wooden'});
     var invalid2 = new Ship({name: 'Toy2', type: 'tin'});
@@ -40,7 +40,7 @@ describe('Ship', function() {
     assert.equal(invalid3.type, undefined);
   })
 
-  it.skip('has a max number of crew members', function() {
+  it('has a max number of crew members', function() {
     var fighter = new Ship(
       { 
         name: 'Atlantis',
@@ -52,7 +52,7 @@ describe('Ship', function() {
     assert.equal(fighter.maxCrew, 2);
   })
 
-  it.skip('has an odemeter reading of zero by default', function() {
+  it('has an odemeter reading of zero by default', function() {
     var fighter = new Ship(
       { 
         name: 'Atlantis',
@@ -64,7 +64,7 @@ describe('Ship', function() {
     assert.equal(fighter.odometer, 0);
   })
 
-  it.skip('can be initialized with a odometer reading', function() {
+  it('can be initialized with a odometer reading', function() {
     var fighter = new Ship(
       { 
         name: 'Atlantis',
@@ -77,7 +77,7 @@ describe('Ship', function() {
     assert.equal(fighter.odometer, 3340);
   })
 
-  it.skip('has a fuel capacity of 10 by default', function() {
+  it('has a fuel capacity of 10 by default', function() {
     var fighter = new Ship(
       { 
         name: 'Atlantis',
@@ -90,7 +90,7 @@ describe('Ship', function() {
     assert.equal(fighter.fuelCapacity, 10);
   })
 
-  it.skip('can be initialized with a different fuel capacity', function() {
+  it('can be initialized with a different fuel capacity', function() {
     var fighter = new Ship(
       { 
         name: 'Atlantis',
@@ -104,7 +104,7 @@ describe('Ship', function() {
     assert.equal(fighter.fuelCapacity, 2000);
   })
 
-  it.skip('has no fuel by defualt', function() {
+  it('has no fuel by defualt', function() {
     var fighter = new Ship(
       { 
         name: 'Atlantis',
@@ -117,7 +117,7 @@ describe('Ship', function() {
     assert.equal(fighter.fuel, 0);
   })
 
-  it.skip('has a captain', function() {
+  it('has a captain', function() {
     var captain = new Being('Will', 'human');
     var fighter = new Ship(
       { 
@@ -133,7 +133,7 @@ describe('Ship', function() {
     assert.instanceOf(fighter.captain, Being);
   })
 
-  it.skip('has no crew by default', function() {
+  it('has no crew by default', function() {
     var fighter = new Ship(
       { 
         name: 'Atlantis',
@@ -146,7 +146,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, []);
   })
 
-  it.skip('can add multiple crew members', function() {
+  it('can add multiple crew members', function() {
     var crewmember = new Being('Zot', 'krill');
     var droid = new Being('R2-D2', 'droid');
     var fighter = new Ship(
@@ -165,7 +165,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, crew);
   })
 
-  it.skip('can add crew members to the existing crew', function() {
+  it('can add crew members to the existing crew', function() {
     var initalMember = new Being('Ed', 'human');
     var crewmember = new Being('Zot', 'krill');
     var droid = new Being('R2-D2', 'droid');
@@ -186,7 +186,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, expectedCrew);
   })
 
-  it.skip('can only add crew up to the maxCrew size', function() {
+  it('can only add crew up to the maxCrew size', function() {
     var initalMember = new Being('Ed', 'human');
     var crewmember = new Being('Zot', 'krill');
     var droid = new Being('R2-D2', 'droid');
@@ -207,7 +207,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, expectedCrew);
   })
 
-  it.skip('can not add something other than a being into the crew', function() {
+  it('can not add something other than a being into the crew', function() {
     var fighter = new Ship(
       { 
         name: 'Atlantis',
@@ -223,7 +223,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, []);
   })
 
-  it.skip('has no cargo by default', function() {
+  it('has no cargo by default', function() {
     var fighter = new Ship(
       { 
         name: 'Atlantis',
@@ -236,7 +236,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.cargo, []);
   })
 
-  it.skip('can load cargo', function() {
+  it('can load cargo', function() {
     var partCargo = new Part({name: 'Dell', type: 'computer', value: 100});
     var fighter = new Ship(
       { 
@@ -252,7 +252,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.cargo, [partCargo]);
   })
 
-  it.skip('can only load Part cargo', function() {
+  it('can only load Part cargo', function() {
     var partCargo = new Part({name: 'Dell', type: 'computer', value: 100});
     var fighter = new Ship(
       { 
@@ -271,7 +271,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.cargo, [partCargo]);
   })
 
-  it.skip('has an empty parts list by default', function() {
+  it('has an empty parts list by default', function() {
     var fighter = new Ship(
       { 
         name: 'Atlantis',
@@ -284,7 +284,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.parts, {});
   })
 
-  it.skip('can be initialized with parts', function() {
+  it('can be initialized with parts', function() {
     var parts = {
       shell: new Part({ name: 'XC-Wing', type: 'shell', value: 8000 }),
       computer: new Part({ name: 'Starmapper', type: 'computer', value: 300 }),
@@ -302,7 +302,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.parts, parts);
   })
 
-  it.skip('can add a new part', function() {
+  it('can add a new part', function() {
     var parts = {
       shell: new Part({ name: 'XC-Wing', type: 'shell', value: 8000 }),
       computer: new Part({ name: 'Starmapper', type: 'computer', value: 300 }),
@@ -323,7 +323,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.parts.hyperdrive, hyperdrive);
   })
 
-  it.skip('can only add valid parts', function() {
+  it('can only add valid parts', function() {
     var fighter = new Ship(
       { 
         name: 'Atlantis',
@@ -339,7 +339,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.parts, {});
   })
 
-  it.skip('can replace an existing part, returning the diff in value', function() {
+  it('can replace an existing part, returning the diff in value', function() {
     var parts = {
       shell: new Part({ name: 'XC-Wing', type: 'shell', value: 8000 }),
       computer: new Part({ name: 'Starmapper', type: 'computer', value: 300 }),
@@ -361,7 +361,7 @@ describe('Ship', function() {
     assert.equal(difference, -1000);
   })
 
-  it.skip('can replace another existing part, returning the diff in value', function() {
+  it('can replace another existing part, returning the diff in value', function() {
     var parts = {
       shell: new Part({ name: 'XC-Wing', type: 'shell', value: 8000 }),
       computer: new Part({ name: 'Starmapper', type: 'computer', value: 300 }),
@@ -383,7 +383,7 @@ describe('Ship', function() {
     assert.equal(difference, 2500);
   })
 
-  it.skip('cannot fly without a captain', function() {
+  it('cannot fly without a captain', function() {
     var fighter = new Ship(
       { 
         name: 'Atlantis',
@@ -399,7 +399,7 @@ describe('Ship', function() {
     assert.equal(status.notes, 'Cannot fly without a captain');
   })
 
-  it.skip('cannot fly without fuel', function() {
+  it('cannot fly without fuel', function() {
     var captain = new Being('Will', 'human');
     var fighter = new Ship(
       { 
@@ -435,7 +435,7 @@ describe('Ship', function() {
     assert.equal(status.notes, 'Cannot fly without all parts');
   })
 
-  it.skip('can fly', function() {
+  it('can fly', function() {
     var captain = new Being('Will', 'human');
     var parts = {
       shell: new Part({name: 'S-1', type: 'shell', value: 200}),

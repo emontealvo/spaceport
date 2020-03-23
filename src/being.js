@@ -8,8 +8,7 @@ class Being {
 			return (this.credits += creditValue)
 		}
 	}
-
-	}
+}
 
 
 

@@ -6,26 +6,26 @@ var Part = require('../src/part');
 var Shop = require('../src/shop');
 
 describe('Planet', function() {
-  it.skip('has a name', function() {
+  it('has a name', function() {
     var planet = new Planet({name: 'D1'})
 
     assert.equal(planet.name, 'D1')
   })
 
-  it.skip('can have a different name', function() {
+  it('can have a different name', function() {
     var planet = new Planet({name: 'F2'})
 
     assert.equal(planet.name, 'F2')
   })
 
-  it.skip('can have a shop', function() {
+  it('can have a shop', function() {
     var shop = new Shop({name: 'EZ-mart'})
     var planet = new Planet({name: 'F2', shop: shop})
 
     assert.equal(planet.shop.name, 'EZ-mart')
   })
 
-  it.skip('can have a different shop', function() {
+  it('can have a different shop', function() {
     var shop = new Shop({name: 'Walmart'})
     var planet = new Planet({name: 'F2', shop: shop})
 
@@ -58,14 +58,14 @@ describe('Planet', function() {
     assert.deepEqual(planet.currentShip, fighter)
   })
 
-  it.skip('has coordinates', function() {
+  it('has coordinates', function() {
     var coordinates = {x:0, y:0, z:0}
     var planet = new Planet({name: 'F2', coordinates: coordinates})
 
     assert.deepEqual(planet.coordinates, coordinates)
   })
 
-  it.skip('can have different coordinates', function() {
+  it('can have different coordinates', function() {
     var coordinates = {x:10, y:10, z:0}
     var planet = new Planet({name: 'F2', coordinates: coordinates})
 

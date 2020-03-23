@@ -5,19 +5,19 @@ var Being = require('../src/being');
 var Ship = require('../src/ship');
 
 describe('Shop', function() {
-  it.skip('has a name', function() {
+  it('has a name', function() {
     var newShop = new Shop({name: 'EZ-way'})
 
     assert.equal(newShop.name, 'EZ-way')
   })
 
-  it.skip('can have a different name', function() {
+  it('can have a different name', function() {
     var newShop = new Shop({name: 'Conogo'})
 
     assert.equal(newShop.name, 'Conogo')
   })
 
-  it.skip('has no inventory by default', function() {
+  it('has no inventory by default', function() {
     var newShop = new Shop({name: 'Conogo'})
 
     assert.deepEqual(newShop.inventory, {})
